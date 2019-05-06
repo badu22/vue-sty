@@ -145,11 +145,9 @@
 
 	.playersList {
 		background-color: #202020;
-		// padding: 30px 30px 90px;
 		padding: 30px;
 		position: relative;
-		// height: 100vh;
-		// overflow: auto;
+		
 		&__legend {
 			@include fontSize(14);
 			@include lineHeight(20,14);
@@ -157,7 +155,6 @@
 			@extend .justify-content-between;
 			@extend .align-items-center;
 			color: $white;
-			// border-bottom: #383838 1px solid;
 			padding: 10px 0;
 		}
 		&__sortListCta {
@@ -165,18 +162,17 @@
 		}
 		&__item {
 			@extend .d-flex;
-			// @extend .justify-content-between;
 			@extend .align-items-center;
 			padding: 20px 0;
 			border-top: #383838 1px solid;
-			background-color: #202020;
+			background-color: rgba(32, 32, 32, 1);
 			position: relative;
+			overflow: hidden;
+			cursor: pointer;
+			transition: background-color 150ms ease-out;
 
 			&:last-child { 
 				border-bottom: #383838 1px solid;
-				// position: absolute; 
-			// 	bottom: 0px;
-			// 	width: 100%;
 			}
 			
 			&:before {
@@ -188,7 +184,31 @@
 				background: linear-gradient(to bottom, #eb9909 0%,#ffd800 100%);
 				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eb9909', endColorstr='#ffd800',GradientType=0 );
 			}
-			&:hover { text-decoration: none; }
+			&:after {
+				content: ""; display: block; width: 110%; height: 20px;
+				position: absolute; left: -18px; top: -59px; 
+				background-color: rgba(235, 153, 9, .3); 
+				transform: translateY(0px) rotate(-5deg);
+				transition: all 0; 
+				box-shadow: 0 0 3px 0 rgba(255, 204, 0, 1);
+
+				// background: #eb9909;
+				// background: -moz-linear-gradient(top, #eb9909 0%, #ffd800 100%);
+				// background: -webkit-linear-gradient(top, #eb9909 0%,#ffd800 100%);
+				// background: linear-gradient(to bottom, #eb9909 0%,#ffd800 100%);
+				// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eb9909', endColorstr='#ffd800',GradientType=0 );
+
+				opacity: .2;
+			}
+			&:hover { 
+				text-decoration: none; 
+				background-color: rgba(56, 56, 56, .4);
+				transition: background-color 200ms ease-in 200ms;
+				&:after {
+					transform: translateY(220px) rotate(-15deg);
+					transition: transform 450ms ease-in;
+				}
+			}
 
 		}
 		&__item-1:before {
