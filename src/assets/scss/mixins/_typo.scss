@@ -1,0 +1,26 @@
+@mixin ssp {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+@mixin fontFace($fontFamily) {
+    font-family: $fontFamily, Arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+
+@mixin text-hide() {
+    font: #{0/0} a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+@mixin fontSize($sizeValue) {
+    font-size: $sizeValue + px;
+    font-size: ($sizeValue / 10) + rem;
+}
+
+@mixin lineHeight($heightValue, $fontSize) {
+    line-height: ($heightValue / $fontSize) + em;
+}

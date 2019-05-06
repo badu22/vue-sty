@@ -1,0 +1,53 @@
+/* Debug */
+
+@mixin debug {
+    outline: solid #ff0000 1px;
+}
+
+@mixin debug2 {
+    background: #ffcc00 !important;
+}
+
+@mixin debug3 {
+    background: #ff0000 !important;
+}
+
+@mixin debug4 {
+    background: #009933 !important;
+}
+
+@mixin debug5 {
+    background: #3333cc !important;
+}
+
+@mixin debug6 {
+    background: #d9b62b !important;
+}
+
+.debug {
+    outline: solid #ff0000 1px;
+}
+
+.debug2 {
+    background: #ffcc00 !important;
+}
+
+.debug3 {
+    background: #ff0000 !important;
+}
+
+.debug4 {
+    background: #009933 !important;
+}
+
+.debug5 {
+    background: #3333cc !important;
+}
+
+.debug6 {
+    background: #d9b62b !important;
+}
+
+// .debug p {
+//     background: #f2f2f2 !important;
+// }

@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,900');
+
+// Mixins
+@import "mixins/breakpoints";
+@import "mixins/hover";
+// @import "mixins/text-hide";
+@import "mixins/clearfix";
+@import "mixins/typo";
+
+// Utilities
+@import "utilities/functions";
+@import "utilities/variables";
+@import "utilities/reboot";
+@import "utilities/utilities";
+@import "utilities/flex";
+@import "utilities/display";
+
+// Layout
+@import "mixins/grid-framework";
+@import "mixins/grid";
+
+// Debug
+@import "utilities/debug";
+
+// Content
+@import "grid";
+
+.container--gutter5030 {
+	padding: 30px 50px;
+}
+
+// @import 'node_modules/bootstrap/scss/bootstrap';
+// @import 'node_modules/bootstrap-vue/src/index.scss';
+
+
+
+
+
+
+
+
+// $primary: blue;
+
+// 	// @include media-breakpoint-up(xs) {  }
+// 	// @include media-breakpoint-up(sm) { .item { background-color: #ff0000; margin-bottom: 20px; } }
+// 	// @include media-breakpoint-up(md) { .item { background-color: #ffcc00; margin-bottom: 20px; } }
+// 	// // @include media-breakpoint-up(lg) {  }
+// 	// @include media-breakpoint-up(xl) {  }
+// // $color2: #ffcc00;
