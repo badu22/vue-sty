@@ -33,6 +33,7 @@
             'id'
         ],
         methods: {
+			// get single player from list by id
             filterPlayers(data) {
                 var id = this.id;
                 var player = data.filter(function(player){ return player.id == id;} ).pop();
@@ -44,13 +45,19 @@
             axios.get('/players.json')
                 .then(response => {
                     this.playersList = response.data.players;
+					
+					//sort list by score
 					this.playersList = _.sortBy(this.playersList, ['score']);				
+					
+					//revese it
 					this.playersList = this.playersList.reverse();	
 					
+					//add fixed index to list
 					for (var i = 0; i < this.playersList.length; i++) {
 						this.playersList[i].inx = (i + 1);
 					} 
                     
+					//get single player
                     this.filterPlayers(this.playersList);
                 })
                 .catch(e => {

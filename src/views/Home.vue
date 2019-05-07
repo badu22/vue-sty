@@ -60,6 +60,7 @@
 			}
 		},
 		methods: {
+			// toggle list asc or desc 
 			sortPlayers() {
 				this.playersList = this.playersList.reverse();
 			}
@@ -68,9 +69,14 @@
 			axios.get('/players.json')
 				.then(response => {
 					this.playersList = response.data.players;
-					this.playersList = _.sortBy(this.playersList, ['score']);				
+
+					//sort list by score
+					this.playersList = _.sortBy(this.playersList, ['score']);	
+
+					//revese it			
 					this.playersList = this.playersList.reverse();	
 					
+					//add fixed index to list
 					for (var i = 0; i < this.playersList.length; i++) {
 						this.playersList[i].inx = (i + 1);
 					} 			
@@ -108,10 +114,12 @@
 		}
 	}
 
+	
 	.mainContent {
 		background-color: $white;
 		padding: 30px;
 
+		//content from cms, no BEM
 		h1 {
 			@include ssp;
 			font-weight: 900;
@@ -187,7 +195,6 @@
 			&:after {
 				content: ""; display: block; width: 110%; height: 20px;
 				position: absolute; left: -18px; top: -59px; 
-				background-color: rgba(235, 153, 9, .3); 
 				transform: translateY(0px) rotate(-5deg);
 				transition: all 0; 
 				box-shadow: 0 0 3px 0 rgba(255, 204, 0, 1);
