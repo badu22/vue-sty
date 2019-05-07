@@ -3,7 +3,7 @@
        <div class="container container--gutter5030">
 			<div class="row no-gutters">
 				<div class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-        			<div class="playerSingle">
+					<div class="playerSingle">
 						<div class="playerSingle__item">
 							<div class="playerSingle__index">{{ player.inx }}.</div>
 							<div class="playerSingle__image">	</div>
