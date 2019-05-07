@@ -5,12 +5,6 @@ import router from './router';
 import { sortBy } from 'lodash';   
 Vue.use(sortBy);
 
-// import BootstrapVue from 'bootstrap-vue';
-// Vue.use(BootstrapVue);
-// import 'bootstrap/dist/css/bootstrap.css';
-// import 'bootstrap-vue/dist/bootstrap-vue.css';
-
-
 Vue.config.productionTip = false;
 
 new Vue({

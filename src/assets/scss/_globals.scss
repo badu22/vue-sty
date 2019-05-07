@@ -1,9 +1,13 @@
+//google font
+//light font-weight: 300
+//regular font-weight: 400
+//bold font-weight: 700
+//black font-weight: 900
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,900');
 
 // Mixins
 @import "mixins/breakpoints";
 @import "mixins/hover";
-// @import "mixins/text-hide";
 @import "mixins/clearfix";
 @import "mixins/typo";
 
@@ -22,28 +26,12 @@
 // Debug
 @import "utilities/debug";
 
-// Content
+// grid
 @import "grid";
 
+
+//global helper classes
 .container--gutter5030 {
 	padding: 30px 50px;
 }
 
-// @import 'node_modules/bootstrap/scss/bootstrap';
-// @import 'node_modules/bootstrap-vue/src/index.scss';
-
-
-
-
-
-
-
-
-// $primary: blue;
-
-// 	// @include media-breakpoint-up(xs) {  }
-// 	// @include media-breakpoint-up(sm) { .item { background-color: #ff0000; margin-bottom: 20px; } }
-// 	// @include media-breakpoint-up(md) { .item { background-color: #ffcc00; margin-bottom: 20px; } }
-// 	// // @include media-breakpoint-up(lg) {  }
-// 	// @include media-breakpoint-up(xl) {  }
-// // $color2: #ffcc00;
