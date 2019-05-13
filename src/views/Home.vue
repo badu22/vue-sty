@@ -37,7 +37,7 @@
 							<div>Korisnik</div>
 							<div class="playersList__sortListCta" @click="sortPlayers()">Bodovi</div>
 						</div>
-						<a :href="'/player/'+player.id" :class="'playersList__item playersList__item'+-player.inx" v-for="(player, index) in playersList" :key="index">
+						<a :href="'/player/'+player.id" :class="'playersList__item playersList__item'+-player.inx" v-for="(player, index) in playersListStore" :key="index">
 							<div class="playersList__index">{{ player.inx }}.</div>
 							<div class="playersList__image">	</div>
 							<div class="playersList__name">{{ player.name }}</div>
@@ -51,7 +51,7 @@
 </template>
 
 <script>
-	import axios from "axios";
+	import { mapState } from 'vuex';
 	export default {
 		name: 'home',
 		data() {
@@ -62,28 +62,16 @@
 		methods: {
 			// toggle list asc or desc 
 			sortPlayers() {
-				this.playersList = this.playersList.reverse();
+				this.$store.commit('sortPlayers');
 			}
 		},
-		mounted() {
-			axios.get('/players.json')
-				.then(response => {
-					this.playersList = response.data.players;
-
-					//sort list by score
-					this.playersList = _.sortBy(this.playersList, ['score']);	
-
-					//revese it			
-					this.playersList = this.playersList.reverse();	
-					
-					//add fixed index to list
-					for (var i = 0; i < this.playersList.length; i++) {
-						this.playersList[i].inx = (i + 1);
-					} 			
-				})
-				.catch(e => {
-					this.errors.push(e)
-				})
+		created() {
+			this.$store.dispatch('loadPlayers');
+		},
+		computed: {
+			...mapState({
+				playersListStore: state => state.playersListStore
+			})
 		}
 	}
 </script>

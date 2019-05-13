@@ -19,53 +19,28 @@
 </template>
 
 <script>
-    import axios from "axios";
-
-    export default {
-        name: 'player',
-        data() {
-            return {
-                playersList: [],
+	import { mapGetters } from 'vuex';
+	export default {
+		name: 'player',
+		data() {
+			return {
                 player: []
-            }
-        },
-        props: [
+			}
+		},
+		props: [
             'id'
         ],
-        methods: {
-			// get single player from list by id
-            filterPlayers(data) {
-                var id = this.id;
-                var player = data.filter(function(player){ return player.id == id;} ).pop();
-                this.player = player;
-            }
-            
-        },
-        mounted() {
-            axios.get('/players.json')
-                .then(response => {
-                    this.playersList = response.data.players;
-					
-					//sort list by score
-					this.playersList = _.sortBy(this.playersList, ['score']);				
-					
-					//revese it
-					this.playersList = this.playersList.reverse();	
-					
-					//add fixed index to list
-					for (var i = 0; i < this.playersList.length; i++) {
-						this.playersList[i].inx = (i + 1);
-					} 
-                    
-					//get single player
-                    this.filterPlayers(this.playersList);
-                })
-                .catch(e => {
-                    this.errors.push(e)
-                });
+		mounted() {	
+			this.$store.dispatch('loadPlayers').then(()=>{
+				this.player = this.singlePlayerById(this.id);
+			}); 
 
-        }
-    }
+		},
+		computed: {
+			...mapGetters(['singlePlayerById'])
+		}
+	}
+	
 </script>
 
 

@@ -4,7 +4,7 @@
 			<div class="row">
 				<div class="col-sm-12">
 					<div class="header">
-						<h1 class="header__title">Styria medijski servisi</h1>
+						<h1 class="header__title">Styria Medijski servisi</h1>
 						<p class="header__subTitle">(SourceSans Pro googlefont)</p>
 					</div>
 				</div>
